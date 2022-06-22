@@ -1,0 +1,21 @@
+<% layout('layouts/boilerplate') %>
+
+
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= blog.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= blog.author %> </h6>
+          <p class="card-text"><%= blog.content %> </p>
+
+          <div class="d-flex">
+            <form action="/blog/<%= blog._id %>/edit" method="GET">
+                <button class="btn btn-primary">Edit</button>
+              </form>
+        
+        
+              <form action="/blog/<%= blog._id %>?_method=DELETE" method="POST">
+                <button class="mx-3 btn btn-danger">Delete</button>
+              </form>
+          </div>
+        </div>
+    </div>
